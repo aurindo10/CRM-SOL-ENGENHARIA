@@ -1,8 +1,9 @@
 const Perfil = require('../models/model')
+const Task = require('../models/model')
 
 
-
-const TaskManeg = async(req, res, next)=> {
+const TaskManeg = {
+    getTasks: async(req, res, next)=> {
    
     let allclientes = await Perfil.find({})
     let id = req.params.id
@@ -14,11 +15,16 @@ const TaskManeg = async(req, res, next)=> {
        return person.tasks
     }
     let result = allclientes.filter(teste)
-    alltasks =  result.map(filter02)
-    res.send(alltasks)
+    
+    res.send(result.map(filter02))
 
+},
+    taskEditor: async(req, res, next)=> {
+        let id = req.params.id
+        let allclientes = await Perfil.findById({id})
+        res.send(allclientes)
+    }
 }
-
         
 
 
