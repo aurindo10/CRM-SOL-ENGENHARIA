@@ -22,7 +22,9 @@ const perfilschema = new mongoose.Schema({
   
   });
 
-
+ let allSchema = {Perfil: mongoose.model('Perfil', perfilschema), 
+ Task: mongoose.model('Task', taskSchema)
+}
   
 
-module.exports = mongoose.model('Perfil', perfilschema);
+module.exports = allSchema

@@ -7,5 +7,5 @@ router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/task', userController.createNewTask)
 router.get('/:id', taskController.getTasks )
-router.post('/edit/:id', taskController.taskEditor)
-module.exports = router; 
+router.post('/editask/:idTask', taskController.taskEditor)
+module.exports = router;    
