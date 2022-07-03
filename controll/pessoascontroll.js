@@ -66,7 +66,8 @@ const editacliente = async (req, res, next) =>
         id = req.body.id;
     }
     try {
-    let doc = await Perfil.findByIdAndUpdate(id, cliente)
+    let doc = await Perfil.findByIdAndUpdate(
+        , cliente)
     res.redirect('/todos')
         }
     catch (error) {

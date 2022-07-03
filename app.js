@@ -15,7 +15,14 @@ mongoose.connect(process.env.MONGO_CONECTION_URL,(error)=>{
         console.log('Mongo Connected')
 })
 
- 
+app.use(express.static(path.join(__dirname,'front/build')))
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname,'front/build/index.html', function (error) {
+        if (error) {
+            
+        res.status(500).send(error)}
+    }))
+})
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'))

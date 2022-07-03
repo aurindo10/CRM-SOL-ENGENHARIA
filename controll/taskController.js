@@ -25,7 +25,8 @@ const TaskManeg = {
         let description= req.body.description
         let everyone =  await allTask.Perfil.find({})
         function teste03 (personAble) {
-            return (personAble.tasks.id(idTask))  
+            r
+            eturn (personAble.tasks.id(idTask))  
             }
         
         
